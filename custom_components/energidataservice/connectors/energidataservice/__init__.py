@@ -24,9 +24,7 @@ DEFAULT_CURRENCY = "EUR"
 __all__ = ["REGIONS", "Connector", "DEFAULT_CURRENCY", "CO2REGIONS"]
 
 
-def prepare_data(
-    indata, date, tz, resolution: bool = False
-) -> list:  # pylint: disable=invalid-name
+def prepare_data(indata, date, tz, resolution: bool = False) -> list:  # pylint: disable=invalid-name
     """Get prices in 15 minutes resolution."""
     local_tz = dt_util.get_default_time_zone()
     reslist = []
@@ -80,7 +78,12 @@ class Connector:
     """Energi Data Service API."""
 
     def __init__(
-        self, regionhandler, client, tz, config, version  # pylint: disable=invalid-name
+        self,
+        regionhandler,
+        client,
+        tz,
+        config,
+        version,  # pylint: disable=invalid-name
     ) -> None:
         """Init API connection to Energi Data Service."""
         self.config = config

@@ -47,7 +47,11 @@ class Connector:
     """Carnot forecast API."""
 
     def __init__(
-        self, regionhandler, client, tz, version  # pylint: disable=invalid-name
+        self,
+        regionhandler,
+        client,
+        tz,
+        version,  # pylint: disable=invalid-name
     ) -> None:
         """Init API connection to Carnot."""
         self.regionhandler = regionhandler

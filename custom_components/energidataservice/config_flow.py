@@ -106,7 +106,9 @@ class EnergidataserviceOptionsFlowHandler(config_entries.OptionsFlow):
         )
 
     async def _do_update(
-        self, *args, **kwargs  # pylint: disable=unused-argument
+        self,
+        *args,
+        **kwargs,  # pylint: disable=unused-argument
     ) -> None:
         """Update after settings change."""
         await async_unload_entry(self.hass, self.config_entry)
@@ -603,7 +605,8 @@ class EnergidataserviceConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         )
 
     async def async_step_import(
-        self, user_input: Any | None  # pylint: disable=unused-argument
+        self,
+        user_input: Any | None,  # pylint: disable=unused-argument
     ) -> Any:
         """Import a config entry.
 
